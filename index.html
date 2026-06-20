@@ -1,0 +1,1514 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>阅读伙伴动物天团 | 阅星人读书社</title>
+  <meta name="description" content="12 个阅读伙伴动物 IP，陪孩子把书读进去，把想法读出来。">
+  <style>
+    :root {
+      --ink: #372516;
+      --ink-soft: #684f38;
+      --muted: #806f5d;
+      --paper: #fff9ed;
+      --cream: #fff1d1;
+      --cream-strong: #ffe4a8;
+      --white: #ffffff;
+      --line: #edd8b6;
+      --coral: #f26f5e;
+      --rose: #f693a9;
+      --sun: #f6b84a;
+      --leaf: #80b965;
+      --mint: #6bc6ad;
+      --sky: #5aa5df;
+      --blue: #3471bd;
+      --lilac: #9b7bd6;
+      --plum: #6e519e;
+      --shadow: 0 20px 58px rgba(129, 85, 33, 0.18);
+      --soft-shadow: 0 10px 30px rgba(129, 85, 33, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, #fff9ed 0, #fff4df 420px, #fff9ed 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.44) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.36) 1px, transparent 1px);
+      background-size: 42px 42px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    p,
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+    }
+
+    .site {
+      overflow: hidden;
+    }
+
+    .nav {
+      position: fixed;
+      top: 16px;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    .nav__inner {
+      width: min(1180px, calc(100% - 40px));
+      min-height: 56px;
+      margin: 0 auto;
+      padding: 8px 10px 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border: 1px solid rgba(237, 216, 182, 0.75);
+      border-radius: 8px;
+      background: rgba(255, 249, 237, 0.88);
+      box-shadow: 0 10px 28px rgba(129, 85, 33, 0.12);
+      backdrop-filter: blur(18px);
+      pointer-events: auto;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .brand__mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, var(--sun), #ffd978 54%, var(--leaf));
+      color: var(--white);
+      box-shadow: inset 0 -2px 0 rgba(121, 78, 26, 0.18);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--ink-soft);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .nav__links a {
+      min-height: 36px;
+      padding: 6px 10px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 8px;
+    }
+
+    .nav__links a:hover {
+      background: rgba(246, 184, 74, 0.18);
+      color: var(--ink);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 680px;
+      height: 88svh;
+      max-height: 820px;
+      display: grid;
+      align-items: center;
+      isolation: isolate;
+      background:
+        linear-gradient(100deg, rgba(255, 249, 237, 1) 0%, rgba(255, 249, 237, 0.97) 33%, rgba(255, 249, 237, 0.76) 56%, rgba(255, 244, 223, 0.42) 100%),
+        linear-gradient(180deg, rgba(255, 241, 209, 0.88), rgba(255, 249, 237, 0.96));
+    }
+
+    .hero::after {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      height: 128px;
+      content: "";
+      background:
+        linear-gradient(180deg, rgba(255, 249, 237, 0), var(--paper) 84%),
+        repeating-linear-gradient(90deg, rgba(246, 184, 74, 0.18) 0 2px, transparent 2px 110px);
+    }
+
+    .hero__poster {
+      position: absolute;
+      z-index: -1;
+      right: max(-90px, calc((100vw - 1180px) / 2 - 120px));
+      top: 88px;
+      width: min(47vw, 590px);
+      min-width: 430px;
+      border: 1px solid rgba(255, 202, 112, 0.8);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      transform: rotate(1.2deg);
+    }
+
+    .hero__glow {
+      position: absolute;
+      z-index: -2;
+      right: max(-120px, calc((100vw - 1180px) / 2 - 160px));
+      top: 134px;
+      width: min(48vw, 610px);
+      height: 560px;
+      background:
+        linear-gradient(135deg, rgba(246, 184, 74, 0.34), rgba(107, 198, 173, 0.2)),
+        linear-gradient(45deg, rgba(90, 165, 223, 0.14), rgba(246, 147, 169, 0.2));
+      border-radius: 8px;
+      transform: rotate(-2deg);
+    }
+
+    .hero__inner,
+    .section__inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 2;
+      padding-top: 92px;
+    }
+
+    .hero__copy {
+      width: min(660px, 64%);
+      padding: 70px 0 78px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .eyebrow::before {
+      width: 34px;
+      height: 4px;
+      content: "";
+      display: inline-block;
+      border-radius: 8px;
+      background: linear-gradient(90deg, var(--coral), var(--sun), var(--leaf));
+    }
+
+    h1 {
+      margin-top: 18px;
+      max-width: 620px;
+      color: #2f1f12;
+      font-size: 72px;
+      line-height: 1.04;
+      letter-spacing: 0;
+      font-weight: 950;
+    }
+
+    .hero__lead {
+      margin-top: 24px;
+      max-width: 560px;
+      color: var(--ink-soft);
+      font-size: 22px;
+      line-height: 1.65;
+      font-weight: 750;
+    }
+
+    .hero__text {
+      margin-top: 16px;
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .hero__actions {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 46px;
+      padding: 11px 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid #c65344;
+      border-radius: 8px;
+      background: var(--coral);
+      color: var(--white);
+      box-shadow: 0 10px 18px rgba(242, 111, 94, 0.25);
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .button--ghost {
+      border-color: rgba(52, 113, 189, 0.28);
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--blue);
+      box-shadow: none;
+    }
+
+    .hero__ribbon {
+      width: min(560px, 100%);
+      margin-top: 44px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border: 1px solid rgba(237, 216, 182, 0.9);
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .hero__ribbon span {
+      min-height: 54px;
+      padding: 10px 8px;
+      display: grid;
+      place-items: center;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 900;
+      text-align: center;
+      border-right: 1px solid rgba(237, 216, 182, 0.85);
+    }
+
+    .hero__ribbon span:nth-child(1) {
+      background: rgba(242, 111, 94, 0.14);
+    }
+
+    .hero__ribbon span:nth-child(2) {
+      background: rgba(90, 165, 223, 0.14);
+    }
+
+    .hero__ribbon span:nth-child(3) {
+      background: rgba(107, 198, 173, 0.16);
+    }
+
+    .hero__ribbon span:nth-child(4) {
+      background: rgba(155, 123, 214, 0.14);
+    }
+
+    .hero__ribbon span:nth-child(5) {
+      background: rgba(128, 185, 101, 0.16);
+      border-right: 0;
+    }
+
+    section {
+      position: relative;
+      padding: 88px 0;
+    }
+
+    .section-heading {
+      max-width: 780px;
+    }
+
+    .section-heading--center {
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-kicker {
+      color: var(--coral);
+      font-size: 14px;
+      font-weight: 950;
+    }
+
+    h2 {
+      margin-top: 10px;
+      color: var(--ink);
+      font-size: 46px;
+      line-height: 1.18;
+      letter-spacing: 0;
+      font-weight: 950;
+    }
+
+    .section-lead {
+      margin-top: 16px;
+      color: var(--ink-soft);
+      font-size: 18px;
+      line-height: 1.8;
+      font-weight: 650;
+    }
+
+    .story-band {
+      padding-top: 96px;
+      background:
+        linear-gradient(180deg, var(--paper), #fff3df 50%, var(--paper));
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.08fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .story-visual {
+      position: relative;
+      min-height: 430px;
+      display: grid;
+      align-items: center;
+    }
+
+    .story-visual::before {
+      position: absolute;
+      inset: 48px 18px 10px;
+      content: "";
+      border: 1px solid rgba(237, 216, 182, 0.86);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(90, 165, 223, 0.11), rgba(246, 184, 74, 0.2)),
+        rgba(255, 255, 255, 0.52);
+      transform: rotate(-2.4deg);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .story-visual img {
+      position: relative;
+      width: min(92%, 560px);
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      transform: rotate(1.1deg);
+    }
+
+    .story-copy {
+      display: grid;
+      gap: 24px;
+    }
+
+    .story-statement {
+      padding-left: 24px;
+      border-left: 6px solid var(--sun);
+    }
+
+    .story-statement strong {
+      color: var(--blue);
+      font-size: 18px;
+    }
+
+    .story-statement p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      min-height: 34px;
+      padding: 5px 12px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(237, 216, 182, 0.92);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--ink-soft);
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .journey {
+      background:
+        linear-gradient(180deg, #fff8ec 0%, #f3fbff 46%, #fff8ed 100%);
+    }
+
+    .journey__top {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
+      gap: 42px;
+      align-items: end;
+      margin-bottom: 36px;
+    }
+
+    .journey__note {
+      padding: 24px;
+      border: 1px solid rgba(90, 165, 223, 0.26);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--ink-soft);
+      box-shadow: var(--soft-shadow);
+      font-size: 16px;
+    }
+
+    .journey-track {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      padding: 24px 0 0;
+      list-style: none;
+      counter-reset: journey;
+    }
+
+    .journey-track::before {
+      position: absolute;
+      left: 9%;
+      right: 9%;
+      top: 51px;
+      height: 5px;
+      content: "";
+      border-radius: 8px;
+      background: linear-gradient(90deg, var(--coral), var(--sky), var(--mint), var(--lilac), var(--leaf));
+    }
+
+    .journey-step {
+      position: relative;
+      z-index: 1;
+      min-height: 280px;
+      padding: 58px 18px 20px;
+      border: 1px solid rgba(237, 216, 182, 0.92);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: var(--soft-shadow);
+      overflow: hidden;
+    }
+
+    .journey-step::before {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      width: 34px;
+      height: 34px;
+      counter-increment: journey;
+      content: counter(journey);
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--tone, var(--coral));
+      color: var(--white);
+      font-weight: 950;
+    }
+
+    .journey-step h3 {
+      color: var(--ink);
+      font-size: 22px;
+      line-height: 1.28;
+      font-weight: 950;
+    }
+
+    .journey-step p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .journey-step ul {
+      margin: 18px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .journey-step li {
+      min-height: 32px;
+      padding: 4px 10px;
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border-radius: 8px;
+      background: rgba(255, 244, 223, 0.82);
+      color: var(--ink-soft);
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .characters {
+      background:
+        linear-gradient(180deg, #fff9ed 0%, #fff0f3 34%, #f4fff7 68%, #fff9ed 100%);
+    }
+
+    .role-filters {
+      margin: 0 auto 28px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .filter-button {
+      min-height: 38px;
+      padding: 7px 13px;
+      border: 1px solid rgba(237, 216, 182, 0.92);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--ink-soft);
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .filter-button[aria-pressed="true"] {
+      border-color: rgba(242, 111, 94, 0.6);
+      background: var(--coral);
+      color: var(--white);
+      box-shadow: 0 8px 18px rgba(242, 111, 94, 0.18);
+    }
+
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .role-card {
+      --tone: var(--coral);
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-height: 100%;
+      border: 1px solid rgba(237, 216, 182, 0.9);
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.66)),
+        linear-gradient(135deg, rgba(246, 184, 74, 0.14), rgba(90, 165, 223, 0.1));
+      box-shadow: var(--soft-shadow);
+      overflow: hidden;
+      transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+    }
+
+    .role-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .role-card.is-hidden {
+      display: none;
+    }
+
+    .role-card[data-tone="rose"] {
+      --tone: var(--rose);
+    }
+
+    .role-card[data-tone="sky"] {
+      --tone: var(--sky);
+    }
+
+    .role-card[data-tone="sun"] {
+      --tone: var(--sun);
+    }
+
+    .role-card[data-tone="mint"] {
+      --tone: var(--mint);
+    }
+
+    .role-card[data-tone="leaf"] {
+      --tone: var(--leaf);
+    }
+
+    .role-card[data-tone="lilac"] {
+      --tone: var(--lilac);
+    }
+
+    .role-card[data-tone="blue"] {
+      --tone: var(--blue);
+    }
+
+    .role-media {
+      position: relative;
+      aspect-ratio: 1583 / 994;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 241, 209, 0.65));
+      border-bottom: 5px solid var(--tone);
+      overflow: hidden;
+    }
+
+    .role-media img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 220ms ease, transform 220ms ease;
+    }
+
+    .role-media .role-back {
+      opacity: 0;
+      transform: scale(1.02);
+    }
+
+    .role-card:hover .role-back {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .role-card:hover .role-front {
+      opacity: 0;
+      transform: scale(1.02);
+    }
+
+    .role-content {
+      padding: 18px 18px 20px;
+    }
+
+    .role-index {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .role-index span:first-child {
+      min-width: 34px;
+      min-height: 26px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--tone);
+      color: var(--white);
+    }
+
+    .role-content h3 {
+      margin-top: 14px;
+      color: var(--ink);
+      font-size: 25px;
+      line-height: 1.2;
+      font-weight: 950;
+    }
+
+    .role-ability {
+      margin-top: 6px;
+      color: var(--blue);
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .role-desc {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .role-quote {
+      margin-top: 14px;
+      padding: 10px 12px;
+      border-left: 4px solid var(--tone);
+      border-radius: 0 8px 8px 0;
+      background: rgba(255, 249, 237, 0.86);
+      color: var(--ink-soft);
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .system {
+      background:
+        linear-gradient(180deg, #f4fff7 0%, #f5f9ff 46%, #fff9ed 100%);
+    }
+
+    .system-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+      gap: 46px;
+      align-items: center;
+    }
+
+    .system-panel {
+      padding: 32px;
+      border: 1px solid rgba(128, 185, 101, 0.28);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(244, 255, 247, 0.82)),
+        rgba(255, 255, 255, 0.8);
+      box-shadow: var(--shadow);
+    }
+
+    .system-panel h3 {
+      color: var(--leaf);
+      font-size: 20px;
+      font-weight: 950;
+    }
+
+    .system-panel p {
+      margin-top: 12px;
+      color: var(--ink-soft);
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .system-list {
+      margin: 24px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+      list-style: none;
+    }
+
+    .system-list li {
+      min-height: 52px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid rgba(237, 216, 182, 0.8);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.74);
+      color: var(--ink-soft);
+      font-weight: 850;
+    }
+
+    .system-list b {
+      width: 34px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 8px;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 14px;
+    }
+
+    .system-visual {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      align-items: center;
+    }
+
+    .system-visual img {
+      border: 1px solid rgba(237, 216, 182, 0.82);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .system-visual img:nth-child(1) {
+      transform: rotate(-1.5deg);
+    }
+
+    .system-visual img:nth-child(2) {
+      margin-top: 46px;
+      transform: rotate(1.4deg);
+    }
+
+    .system-visual img:nth-child(3) {
+      transform: rotate(1.2deg);
+    }
+
+    .system-visual img:nth-child(4) {
+      margin-top: -24px;
+      transform: rotate(-1deg);
+    }
+
+    .brand-story {
+      padding-bottom: 96px;
+      background:
+        linear-gradient(180deg, #fff9ed 0%, #fff4f1 50%, #fff9ed 100%);
+    }
+
+    .brand-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 38px;
+    }
+
+    .brand-card {
+      min-height: 260px;
+      padding: 26px;
+      border: 1px solid rgba(237, 216, 182, 0.92);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.74);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .brand-card b {
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background: var(--tone, var(--coral));
+      color: var(--white);
+      font-size: 18px;
+    }
+
+    .brand-card h3 {
+      margin-top: 22px;
+      color: var(--ink);
+      font-size: 24px;
+      line-height: 1.25;
+      font-weight: 950;
+    }
+
+    .brand-card p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .finale {
+      padding: 74px 0 88px;
+      background:
+        linear-gradient(120deg, rgba(52, 113, 189, 0.94), rgba(107, 198, 173, 0.88)),
+        var(--blue);
+      color: var(--white);
+    }
+
+    .finale__inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.76fr);
+      gap: 34px;
+      align-items: center;
+    }
+
+    .finale h2 {
+      color: var(--white);
+      font-size: 48px;
+    }
+
+    .finale p {
+      margin-top: 16px;
+      max-width: 720px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .finale__images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      align-items: center;
+    }
+
+    .finale__images img {
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: left center;
+      border: 3px solid rgba(255, 255, 255, 0.56);
+      border-radius: 8px;
+      box-shadow: 0 12px 30px rgba(35, 38, 50, 0.2);
+    }
+
+    .finale__images img:nth-child(2) {
+      transform: translateY(-18px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+
+    @media (max-width: 1020px) {
+      .hero {
+        min-height: 760px;
+        height: auto;
+        max-height: none;
+      }
+
+      .hero__poster {
+        right: -120px;
+        top: 154px;
+        width: 520px;
+        min-width: 0;
+        opacity: 0.7;
+      }
+
+      .hero__copy {
+        width: min(640px, 86%);
+      }
+
+      h1 {
+        font-size: 58px;
+      }
+
+      h2,
+      .finale h2 {
+        font-size: 38px;
+      }
+
+      .story-grid,
+      .journey__top,
+      .system-grid,
+      .finale__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-track {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .journey-track::before {
+        display: none;
+      }
+
+      .roles-grid,
+      .brand-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .system-visual {
+        max-width: 720px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        top: 10px;
+      }
+
+      .nav__inner {
+        width: min(100% - 24px, 560px);
+      }
+
+      .nav__links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 0;
+        height: 88svh;
+        max-height: 760px;
+        padding: 96px 0 36px;
+        align-items: start;
+        overflow: hidden;
+      }
+
+      .hero__inner,
+      .section__inner,
+      .finale__inner {
+        width: min(100% - 28px, 560px);
+      }
+
+      .hero__poster {
+        position: absolute;
+        right: -76px;
+        top: auto;
+        bottom: 18px;
+        width: 300px;
+        min-width: 0;
+        margin: 0;
+        opacity: 0.42;
+        transform: rotate(1deg);
+      }
+
+      .hero__glow {
+        display: none;
+      }
+
+      .hero__copy {
+        width: 100%;
+        padding: 0;
+      }
+
+      h1 {
+        font-size: 38px;
+        line-height: 1.08;
+      }
+
+      .hero__lead {
+        font-size: 18px;
+        margin-top: 18px;
+        line-height: 1.58;
+      }
+
+      .hero__text {
+        margin-top: 10px;
+        max-width: 310px;
+        font-size: 15px;
+        line-height: 1.64;
+      }
+
+      .hero__actions {
+        margin-top: 20px;
+      }
+
+      .hero__ribbon {
+        margin-top: 20px;
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .hero__ribbon span {
+        min-height: 42px;
+        padding: 8px 4px;
+        font-size: 12px;
+        border-right: 0;
+        border-bottom: 0;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+
+      h2,
+      .finale h2 {
+        font-size: 32px;
+      }
+
+      .section-lead,
+      .finale p {
+        font-size: 16px;
+      }
+
+      .story-visual {
+        min-height: 0;
+      }
+
+      .story-visual::before {
+        inset: 34px 0 0;
+      }
+
+      .journey-track,
+      .roles-grid,
+      .brand-cards,
+      .system-visual,
+      .finale__images {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-step {
+        min-height: auto;
+      }
+
+      .system-panel,
+      .brand-card {
+        padding: 22px;
+      }
+
+      .system-visual img:nth-child(n),
+      .finale__images img:nth-child(n) {
+        margin-top: 0;
+        transform: none;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="lingokids-style.css">
+</head>
+<body>
+  <div class="site">
+    <nav class="nav" aria-label="页面导航">
+      <div class="nav__inner">
+        <a class="brand" href="#top" aria-label="阅读伙伴动物天团">
+          <span class="brand__mark" aria-hidden="true">★</span>
+          <span>阅读伙伴动物天团</span>
+        </a>
+        <div class="nav__links" aria-label="章节">
+          <a href="#story">理念</a>
+          <a href="#journey">旅程</a>
+          <a href="#roles">伙伴</a>
+          <a href="#system">体系</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <img class="hero__poster" src="assets/总结.png" alt="阅读伙伴动物天团 12 个阅读小伙伴总览">
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <div class="eyebrow">阅星人读书社儿童阅读 IP</div>
+          <h1>打开一本书，遇见 12 个会发光的阅读小伙伴。</h1>
+          <p class="hero__lead">这是一套把阅读兴趣、阅读方法、阅读表达和阅读习惯变成角色的动物天团。</p>
+          <p class="hero__text">孩子看见的是可爱的伙伴，家长看见的是完整的阅读能力路径，老师看见的是可以持续使用的课程语言。</p>
+          <div class="hero__actions">
+            <a class="button" href="#roles">认识 12 个伙伴</a>
+            <a class="button button--ghost" href="#journey">查看阅读旅程</a>
+          </div>
+          <div class="hero__ribbon" aria-label="阅读成长路径">
+            <span>读进去</span>
+            <span>想明白</span>
+            <span>说出来</span>
+            <span>连起来</span>
+            <span>坚持读</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="story-band" id="story">
+        <div class="section__inner story-grid">
+          <div class="story-visual">
+            <img src="assets/沉浸猫.png" alt="沉浸猫角色卡">
+          </div>
+          <div class="story-copy">
+            <div class="section-heading">
+              <div class="section-kicker">IP STORY</div>
+              <h2>把阅读变成一场可爱的成长旅程。</h2>
+              <p class="section-lead">12 个小伙伴分别代表孩子阅读中的一种真实状态：被吸引、读进去、提问题、找答案、会推测、能共情、愿意分享，最后慢慢养成长期阅读习惯。</p>
+            </div>
+            <div class="story-statement">
+              <strong>核心定位</strong>
+              <p>阅读伙伴动物天团，是帮助孩子建立阅读兴趣、阅读方法、阅读表达和阅读习惯的儿童 IP。</p>
+            </div>
+            <div class="pill-row" aria-label="关键词">
+              <span class="pill">毛绒 3D 角色</span>
+              <span class="pill">绘本式叙事</span>
+              <span class="pill">阅读能力地图</span>
+              <span class="pill">儿童友好</span>
+              <span class="pill">家长可信</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="journey" id="journey">
+        <div class="section__inner">
+          <div class="journey__top">
+            <div class="section-heading">
+              <div class="section-kicker">READING JOURNEY</div>
+              <h2>角色顺序，就是孩子读懂一本书的顺序。</h2>
+              <p class="section-lead">从“我想看”到“我读懂了”，再到“我还想继续读”，每一步都有一个伙伴帮孩子把感受说出来。</p>
+            </div>
+            <p class="journey__note">页面叙事会按这条路径展开，而不是简单罗列 12 张卡。这样孩子能记住角色，家长也能看懂课程逻辑。</p>
+          </div>
+
+          <ol class="journey-track">
+            <li class="journey-step" style="--tone: var(--coral)">
+              <h3>先喜欢读</h3>
+              <p>阅读的第一步不是技巧，而是“这本书好像很好看”。</p>
+              <ul>
+                <li>入迷兔</li>
+                <li>沉浸猫</li>
+              </ul>
+            </li>
+            <li class="journey-step" style="--tone: var(--sky)">
+              <h3>再读完整</h3>
+              <p>让孩子能静下来，稳定读完一段、一章、一本书。</p>
+              <ul>
+                <li>专注狮</li>
+              </ul>
+            </li>
+            <li class="journey-step" style="--tone: var(--mint)">
+              <h3>带着问题读</h3>
+              <p>阅读开始变成主动探索，孩子会问，也会找证据。</p>
+              <ul>
+                <li>思考狗</li>
+                <li>探索獭</li>
+              </ul>
+            </li>
+            <li class="journey-step" style="--tone: var(--lilac)">
+              <h3>读出故事感</h3>
+              <p>孩子开始关注线索、悬念、画面和人物情绪。</p>
+              <ul>
+                <li>猜测熊</li>
+                <li>悬念狸</li>
+                <li>想象鸭</li>
+                <li>温暖鹿</li>
+              </ul>
+            </li>
+            <li class="journey-step" style="--tone: var(--leaf)">
+              <h3>连接和坚持</h3>
+              <p>读懂以后能表达、能迁移，也愿意长期走下去。</p>
+              <ul>
+                <li>联想狐</li>
+                <li>喜悦象</li>
+                <li>坚韧龟</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="characters" id="roles">
+        <div class="section__inner">
+          <div class="section-heading section-heading--center">
+            <div class="section-kicker">12 READING FRIENDS</div>
+            <h2>每个小伙伴，都对应一种孩子真正需要的阅读能力。</h2>
+            <p class="section-lead">正面是孩子喜欢的角色，背面是课程可使用的能力徽章。角色越可爱，能力越容易被孩子记住。</p>
+          </div>
+
+          <div class="role-filters" aria-label="角色筛选">
+            <button class="filter-button" type="button" data-filter="all" aria-pressed="true">全部</button>
+            <button class="filter-button" type="button" data-filter="interest" aria-pressed="false">兴趣进入</button>
+            <button class="filter-button" type="button" data-filter="thinking" aria-pressed="false">思考探索</button>
+            <button class="filter-button" type="button" data-filter="story" aria-pressed="false">故事理解</button>
+            <button class="filter-button" type="button" data-filter="growth" aria-pressed="false">表达习惯</button>
+          </div>
+
+          <div class="roles-grid">
+            <article class="role-card" data-group="interest" data-tone="rose">
+              <div class="role-media">
+                <img class="role-front" src="assets/入迷兔.png" alt="入迷兔正面角色卡">
+                <img class="role-back" src="assets/入迷兔背面.png" alt="入迷兔阅读兴趣徽章">
+              </div>
+              <div class="role-content">
+                <div class="role-index"><span>01</span><span>兴趣进入</span></div>
+                <h3>入迷兔</h3>
+                <p class="role-ability">阅读兴趣</p>
+                <p class="role-desc">被故事吸引，愿意主动翻开书的小读者。</p>
+                <p class="role-quote">再看一页，就一页！</p>
+              </div>
+            </article>
+
+            <article class="role-card" data-group="interest" data-tone="lilac">
+              <div class="role-media">
+                <img class="role-front" src="assets/沉浸猫.png" alt="沉浸猫正面角色卡">
+                <img class="role-back" src="assets/沉浸猫背面.png" alt="沉浸猫沉浸阅读徽章">
+              </div>
+              <div class="role-content">
+                <div class="role-index"><span>02</span><span>兴趣进入</span></div>
+                <h3>沉浸猫</h3>
+                <p class="role-ability">沉浸阅读</p>
+                <p class="role-desc">安静进入文本，像真的住进故事世界。</p>
+                <p class="role-quote">嘘，我正在故事里。</p>
+              </div>
+            </article>
+
+            <article class="role-card" data-group="interest" data-tone="sun">
+              <div class="role-media">
+                <img class="role-front" src="assets/专注狮.png" alt="专注狮正面角色卡">
+                <img class="role-back" src="assets/专注狮背面.png" alt="专注狮专注阅读徽章">
+              </div>
+              <div class="role-content">
+                <div class="role-index"><span>03</span><span>稳定阅读</span></div>
+                <h3>专注狮</h3>
+                <p class="role-ability">专注力</p>
+                <p class="role-desc">不急、不乱、不跳读，把内容完整读下来。</p>
+                <p class="role-quote">我能认真读完！</p>
+              </div>
+            </article>
+
+            <article class="role-card" data-group="thinking" data-tone="blue">
+              <div class="role-media">
+                <img class="role-front" src="assets/思考狗.png" alt="思考狗正面角色卡">
+                <img class="role-back" src="assets/思考狗背面.png" alt="思考狗提问思考徽章">
+              </div>
+              <div class="role-content">
+                <div class="role-index"><span>04</span><span>思考探索</span></div>
+                <h3>思考狗</h3>
+                <p class="role-ability">提问能力</p>
+                <p class="role-desc">边读边想，能发现“为什么”和“什么意思”。</p>
+                <p class="role-quote">我有一个问题！</p>
+              </div>
+            </article>
+
+            <article class="role-card" data-group="thinking" data-tone="mint">
+              <div class="role-media">
+                <img class="role-front" src="assets/探索獭.png" alt="探索獭正面角色卡">
+                <img class="role-back" src="assets/探索獭背面.png" alt="探索獭探索阅读徽章">
+              </div>
+              <div class="role-content">
+                <div class="role-index"><span>05</span><span>思考探索</span></div>
+                <h3>探索獭</h3>
+                <p class="role-ability">信息提取</p>
+                <p class="role-desc">带着问题去书里找答案、找证据、做验证。</p>
+                <p class="role-quote">答案一定藏在书里！</p>
+              </div>
+            </article>
+
+            <article class="role-card" data-group="story" data-tone="leaf">
+              <div class="role-media">
+                <img class="role-front" src="assets/猜测熊.png" alt="猜测熊正面角色卡">
+                <img class="role-back" src="assets/猜测熊背面.png" alt="猜测熊猜测阅读徽章">
+              </div>
+              <div class="role-content">
+                <div class="role-index"><span>06</span><span>故事理解</span></div>
+                <h3>猜测熊</h3>
+                <p class="role-ability">推测能力</p>
+                <p class="role-desc">根据前文线索，合理预测后面会发生什么。</p>
+                <p class="role-quote">我猜，后面可能会……</p>
+              </div>
+            </article>
+
+            <article class="role-card" data-group="story" data-tone="lilac">
+              <div class="role-media">
+                <img class="role-front" src="assets/悬念狸.png" alt="悬念狸正面角色卡">
+                <img class="role-back" src="assets/悬念狸背面.png" alt="悬念狸悬念阅读徽章">
+              </div>
+              <div class="role-content">
+                <div class="role-index"><span>07</span><span>故事理解</span></div>
+                <h3>悬念狸</h3>
+                <p class="role-ability">情节理解</p>
+                <p class="role-desc">对伏笔、转折、冲突和谜团保持敏感。</p>
+                <p class="role-quote">后来发生了什么？</p>
+              </div>
+            </article>
+
+            <article class="role-card" data-group="story" data-tone="sky">
+              <div class="role-media">
+                <img class="role-front" src="assets/想象鸭.png" alt="想象鸭正面角色卡">
+                <img class="role-back" src="assets/想象鸭背面.png" alt="想象鸭想象阅读徽章">
+              </div>
+              <div class="role-content">
+                <div class="role-index"><span>08</span><span>故事理解</span></div>
+                <h3>想象鸭</h3>
+                <p class="role-ability">画面感与想象力</p>
+                <p class="role-desc">读到哪里，脑中就能出现画面、声音和场景。</p>
+                <p class="role-quote">我看见故事里的画面啦！</p>
+              </div>
+            </article>
+
+            <article class="role-card" data-group="story" data-tone="rose">
+              <div class="role-media">
+                <img class="role-front" src="assets/温暖鹿.png" alt="温暖鹿正面角色卡">
+                <img class="role-back" src="assets/温暖鹿背面.png" alt="温暖鹿温暖阅读徽章">
+              </div>
+              <div class="role-content">
+                <div class="role-index"><span>09</span><span>故事理解</span></div>
+                <h3>温暖鹿</h3>
+                <p class="role-ability">共情能力</p>
+                <p class="role-desc">理解人物的开心、难过、委屈、勇敢和善良。</p>
+                <p class="role-quote">我懂他的感受。</p>
+              </div>
+            </article>
+
+            <article class="role-card" data-group="growth" data-tone="coral">
+              <div class="role-media">
+                <img class="role-front" src="assets/联想狐.png" alt="联想狐正面角色卡">
+                <img class="role-back" src="assets/联想狐背面.png" alt="联想狐联想阅读徽章">
+              </div>
+              <div class="role-content">
+                <div class="role-index"><span>10</span><span>表达习惯</span></div>
+                <h3>联想狐</h3>
+                <p class="role-ability">联想迁移</p>
+                <p class="role-desc">从书里想到生活、朋友、学校和别的故事。</p>
+                <p class="role-quote">这让我想到了……</p>
+              </div>
+            </article>
+
+            <article class="role-card" data-group="growth" data-tone="sky">
+              <div class="role-media">
+                <img class="role-front" src="assets/喜悦象.png" alt="喜悦象正面角色卡">
+                <img class="role-back" src="assets/喜悦象背面.png" alt="喜悦象喜悦阅读徽章">
+              </div>
+              <div class="role-content">
+                <div class="role-index"><span>11</span><span>表达习惯</span></div>
+                <h3>喜悦象</h3>
+                <p class="role-ability">阅读成就感</p>
+                <p class="role-desc">因为读懂而开心，愿意说出来、分享出去。</p>
+                <p class="role-quote">我读懂啦，好开心！</p>
+              </div>
+            </article>
+
+            <article class="role-card" data-group="growth" data-tone="leaf">
+              <div class="role-media">
+                <img class="role-front" src="assets/坚韧龟.png" alt="坚韧龟正面角色卡">
+                <img class="role-back" src="assets/坚韧龟背面.png" alt="坚韧龟坚持阅读徽章">
+              </div>
+              <div class="role-content">
+                <div class="role-index"><span>12</span><span>表达习惯</span></div>
+                <h3>坚韧龟</h3>
+                <p class="role-ability">阅读习惯</p>
+                <p class="role-desc">慢慢读、坚持读、不放弃，走向长期成长。</p>
+                <p class="role-quote">慢慢读，也会走很远。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="system" id="system">
+        <div class="section__inner system-grid">
+          <div class="system-panel">
+            <div class="section-kicker">COURSE LANGUAGE</div>
+            <h2>一套 IP，也是一套孩子听得懂的阅读语言。</h2>
+            <p>当老师说“今天我们请探索獭帮忙找答案”，能力训练就不再是抽象术语，而变成孩子愿意参与的任务。</p>
+            <ul class="system-list">
+              <li><b>1</b><span>兴趣角色负责打开阅读入口</span></li>
+              <li><b>2</b><span>方法角色负责承接理解过程</span></li>
+              <li><b>3</b><span>表达角色负责把想法读出来</span></li>
+              <li><b>4</b><span>习惯角色负责长期陪伴成长</span></li>
+            </ul>
+          </div>
+          <div class="system-visual" aria-label="能力徽章示例">
+            <img src="assets/思考狗背面.png" alt="思考狗提问思考能力徽章">
+            <img src="assets/联想狐背面.png" alt="联想狐联想能力徽章">
+            <img src="assets/入迷兔背面.png" alt="入迷兔阅读兴趣能力徽章">
+            <img src="assets/坚韧龟背面.png" alt="坚韧龟坚持阅读能力徽章">
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="finale">
+      <div class="finale__inner">
+        <div>
+          <h2>和 12 个阅读小伙伴一起，把书读进去，把想法读出来。</h2>
+        </div>
+        <div class="finale__images" aria-label="阅读伙伴角色">
+          <img src="assets/入迷兔.png" alt="入迷兔">
+          <img src="assets/探索獭.png" alt="探索獭">
+          <img src="assets/坚韧龟.png" alt="坚韧龟">
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const filterButtons = Array.from(document.querySelectorAll(".filter-button"));
+    const roleCards = Array.from(document.querySelectorAll(".role-card"));
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach((item) => {
+          item.setAttribute("aria-pressed", String(item === button));
+        });
+
+        roleCards.forEach((card) => {
+          const visible = filter === "all" || card.dataset.group === filter;
+          card.classList.toggle("is-hidden", !visible);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
