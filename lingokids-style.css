@@ -20,7 +20,7 @@
   --shadow: 0 22px 0 rgba(6, 29, 82, 0.1), 0 28px 48px rgba(6, 29, 82, 0.18);
   --soft-shadow: 0 12px 0 rgba(6, 29, 82, 0.08), 0 18px 28px rgba(6, 29, 82, 0.12);
   --font-body: "Yuanti SC", "YouYuan", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --font-display: "Hannotate SC", "Yuanti SC", "YouYuan", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-display: "Yuanti SC", "YouYuan", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 body {
