@@ -1054,10 +1054,10 @@
       }
 
       .hero {
-        min-height: 0;
-        height: 88svh;
-        max-height: 760px;
-        padding: 96px 0 36px;
+        min-height: 780px;
+        height: auto;
+        max-height: none;
+        padding: 132px 0 88px;
         align-items: start;
         overflow: hidden;
       }
@@ -1070,13 +1070,13 @@
 
       .hero__poster {
         position: absolute;
-        right: -76px;
+        right: -86px;
         top: auto;
-        bottom: 18px;
-        width: 300px;
+        bottom: -104px;
+        width: 270px;
         min-width: 0;
         margin: 0;
-        opacity: 0.42;
+        opacity: 0.3;
         transform: rotate(1deg);
       }
 
@@ -1090,15 +1090,17 @@
       }
 
       h1 {
-        max-width: 455px;
-        font-size: clamp(34px, 6.8vw, 38px);
-        line-height: 1.16;
+        max-width: 360px;
+        margin-top: 24px;
+        font-size: clamp(34px, 9vw, 38px);
+        line-height: 1.14;
       }
 
       .hero__lead {
+        max-width: 350px;
         font-size: 18px;
-        margin-top: 18px;
-        line-height: 1.58;
+        margin-top: 22px;
+        line-height: 1.5;
       }
 
       .hero__text {
@@ -1109,11 +1111,13 @@
       }
 
       .hero__actions {
-        margin-top: 20px;
+        max-width: 360px;
+        margin-top: 28px;
       }
 
       .hero__ribbon {
-        margin-top: 20px;
+        width: min(100%, 360px);
+        margin-top: 22px;
         grid-template-columns: repeat(5, 1fr);
       }
 
