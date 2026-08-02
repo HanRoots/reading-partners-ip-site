@@ -1176,7 +1176,7 @@
     }
   </style>
   <link rel="preload" as="image" href="assets/总结.webp" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="lingokids-style.css?v=cc82ff3">
+  <link rel="stylesheet" href="lingokids-style.css?v=ip-spaces-20260802">
 </head>
 <body>
   <div class="site">
@@ -1190,6 +1190,7 @@
           <a href="#story">理念</a>
           <a href="#journey">旅程</a>
           <a href="#roles">伙伴</a>
+          <a href="#expansion">空间</a>
           <a href="#system">体系</a>
         </div>
       </div>
@@ -1491,6 +1492,73 @@
         </div>
       </section>
 
+      <section class="expansion" id="expansion">
+        <div class="section__inner">
+          <div class="space-head">
+            <div class="section-heading">
+              <div class="section-kicker">IP WORLDS</div>
+              <h2>12 个小伙伴，可以走进三个延展空间。</h2>
+              <p class="section-lead">主角色卡负责认识伙伴，延展空间负责把故事、任务和周边继续长出来。</p>
+            </div>
+            <div class="space-rulebar" aria-label="延展图规则">
+              <span>1583 x 994 横版</span>
+              <span>中英双版本</span>
+              <span>角色身份锁定</span>
+            </div>
+          </div>
+
+          <div class="space-gates" aria-label="IP 延展空间入口">
+            <button class="space-gate is-active" type="button" data-space="room" aria-pressed="true">
+              <span class="space-gate__index">01</span>
+              <span class="space-gate__title">阅读小屋</span>
+              <span class="space-gate__copy">每个孩子心里都有一间阅读小屋，伙伴在里面陪孩子慢慢爱上读书。</span>
+              <span class="space-gate__thumbs" aria-hidden="true">
+                <img src="assets/入迷兔.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+                <img src="assets/沉浸猫.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+                <img src="assets/专注狮.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+              </span>
+              <span class="space-gate__action">进入空间</span>
+            </button>
+            <button class="space-gate" type="button" data-space="forest" aria-pressed="false">
+              <span class="space-gate__index">02</span>
+              <span class="space-gate__title">故事森林</span>
+              <span class="space-gate__copy">每一本书都是一片森林，伙伴组成小队，带孩子进入故事深处。</span>
+              <span class="space-gate__thumbs" aria-hidden="true">
+                <img src="assets/想象鸭.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+                <img src="assets/猜测熊.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+                <img src="assets/悬念狸.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+              </span>
+              <span class="space-gate__action">进入空间</span>
+            </button>
+            <button class="space-gate" type="button" data-space="mission" aria-pressed="false">
+              <span class="space-gate__index">03</span>
+              <span class="space-gate__title">阅读任务卡</span>
+              <span class="space-gate__copy">把阅读能力变成孩子能完成的任务，适合课程卡、奖励章和打卡体系。</span>
+              <span class="space-gate__thumbs" aria-hidden="true">
+                <img src="assets/思考狗背面.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+                <img src="assets/探索獭背面.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+                <img src="assets/坚韧龟背面.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+              </span>
+              <span class="space-gate__action">进入空间</span>
+            </button>
+          </div>
+
+          <div class="space-stage" aria-live="polite">
+            <div class="space-stage__visual">
+              <img id="spaceHeroImage" src="assets/入迷兔.webp" alt="阅读小屋系列代表图" width="1583" height="994" decoding="async" loading="lazy">
+              <div class="space-stage__label" id="spaceLabel">Cozy Reading Room</div>
+            </div>
+            <div class="space-stage__copy">
+              <div class="space-stage__meta" id="spaceMeta">系列 01</div>
+              <h3 id="spaceTitle">阅读小屋系列</h3>
+              <p id="spaceDescription">每个孩子心里都有一间阅读小屋，12 个小伙伴住在里面，陪孩子慢慢爱上读书。</p>
+              <div class="space-usecases" id="spaceUsecases" aria-label="适用方向"></div>
+              <div class="space-scene-list" id="spaceSceneList" aria-label="系列场景"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="system" id="system">
         <div class="section__inner system-grid">
           <div class="system-panel">
@@ -1532,6 +1600,60 @@
   <script>
     const filterButtons = Array.from(document.querySelectorAll(".filter-button"));
     const roleCards = Array.from(document.querySelectorAll(".role-card"));
+    const spaceButtons = Array.from(document.querySelectorAll(".space-gate"));
+    const spaceHeroImage = document.querySelector("#spaceHeroImage");
+    const spaceLabel = document.querySelector("#spaceLabel");
+    const spaceMeta = document.querySelector("#spaceMeta");
+    const spaceTitle = document.querySelector("#spaceTitle");
+    const spaceDescription = document.querySelector("#spaceDescription");
+    const spaceUsecases = document.querySelector("#spaceUsecases");
+    const spaceSceneList = document.querySelector("#spaceSceneList");
+    const extensionRoles = [
+      ["01", "入迷兔", "再看一页，就一页！"],
+      ["02", "沉浸猫", "嘘，我正在故事里。"],
+      ["03", "思考狗", "我有一个问题！"],
+      ["04", "专注狮", "我能认真读完！"],
+      ["05", "想象鸭", "我看见故事里的画面啦！"],
+      ["06", "猜测熊", "我猜，后面可能会……"],
+      ["07", "联想狐", "这让我想到了……"],
+      ["08", "喜悦象", "我读懂啦，好开心！"],
+      ["09", "悬念狸", "后来发生了什么？"],
+      ["10", "温暖鹿", "我懂他的感受。"],
+      ["11", "探索獭", "答案一定藏在书里！"],
+      ["12", "坚韧龟", "慢慢读，也会走很远。"]
+    ];
+    const extensionSpaces = {
+      room: {
+        meta: "系列 01",
+        label: "Cozy Reading Room",
+        title: "阅读小屋系列",
+        suffix: "的阅读小屋",
+        image: "assets/入迷兔.webp",
+        alt: "阅读小屋系列代表图",
+        description: "每个孩子心里都有一间阅读小屋，12 个小伙伴住在里面，陪孩子慢慢爱上读书。",
+        usecases: ["角色卡", "阅读角物料", "房间主题贴纸"]
+      },
+      forest: {
+        meta: "系列 02",
+        label: "Story Forest",
+        title: "故事森林系列",
+        suffix: "的故事森林",
+        image: "assets/想象鸭.webp",
+        alt: "故事森林系列代表图",
+        description: "每一本书都是一片森林，12 个阅读伙伴组成小队，带孩子进入故事深处。",
+        usecases: ["故事延展", "章节地图", "桌游式任务"]
+      },
+      mission: {
+        meta: "系列 03",
+        label: "Reading Mission Card",
+        title: "阅读任务卡系列",
+        suffix: "的阅读任务卡",
+        image: "assets/探索獭背面.webp",
+        alt: "阅读任务卡系列代表图",
+        description: "把阅读能力变成孩子能完成的任务，让每个角色都能进入课程、奖励和打卡体系。",
+        usecases: ["课程任务卡", "奖励徽章", "打卡周边"]
+      }
+    };
 
     filterButtons.forEach((button) => {
       button.addEventListener("click", () => {
@@ -1547,6 +1669,59 @@
         });
       });
     });
+
+    const renderSpace = (key) => {
+      const space = extensionSpaces[key] || extensionSpaces.room;
+
+      spaceButtons.forEach((button) => {
+        const active = button.dataset.space === key;
+        button.classList.toggle("is-active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+
+      spaceHeroImage.src = space.image;
+      spaceHeroImage.alt = space.alt;
+      spaceLabel.textContent = space.label;
+      spaceMeta.textContent = space.meta;
+      spaceTitle.textContent = space.title;
+      spaceDescription.textContent = space.description;
+
+      spaceUsecases.replaceChildren();
+      space.usecases.forEach((item) => {
+        const badge = document.createElement("span");
+        badge.textContent = item;
+        spaceUsecases.appendChild(badge);
+      });
+
+      spaceSceneList.replaceChildren();
+      extensionRoles.forEach(([index, name, slogan]) => {
+        const scene = document.createElement("article");
+        scene.className = "space-scene";
+
+        const sceneIndex = document.createElement("span");
+        sceneIndex.textContent = index;
+
+        const sceneCopy = document.createElement("div");
+        const sceneTitle = document.createElement("strong");
+        sceneTitle.textContent = `${name}${space.suffix}`;
+        const sceneSlogan = document.createElement("p");
+        sceneSlogan.textContent = slogan;
+
+        sceneCopy.append(sceneTitle, sceneSlogan);
+        scene.append(sceneIndex, sceneCopy);
+        spaceSceneList.appendChild(scene);
+      });
+    };
+
+    if (spaceButtons.length) {
+      spaceButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          renderSpace(button.dataset.space);
+        });
+      });
+
+      renderSpace("room");
+    }
   </script>
 </body>
 </html>
