@@ -722,8 +722,9 @@ h2 {
 .space-gate__thumbs img {
   width: 108px;
   aspect-ratio: 1583 / 994;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  background: var(--white);
   border: 5px solid var(--white);
   border-radius: 8px;
   box-shadow: 0 8px 0 rgba(6, 29, 82, 0.12);
@@ -783,8 +784,9 @@ h2 {
 .space-stage__visual img {
   width: 100%;
   aspect-ratio: 1583 / 994;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  background: var(--white);
   border: 7px solid var(--white);
   border-radius: 8px;
   box-shadow: 0 12px 0 rgba(6, 29, 82, 0.12);
@@ -852,21 +854,66 @@ h2 {
 .space-scene-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 18px;
+  gap: 12px;
   margin-top: 20px;
+  max-height: 620px;
+  padding-right: 4px;
+  overflow: auto;
 }
 
 .space-scene {
+  width: 100%;
   display: grid;
-  grid-template-columns: 40px minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 12px;
   align-items: start;
-  min-height: 66px;
-  padding: 10px 0;
-  border-bottom: 2px solid rgba(8, 36, 95, 0.08);
+  min-height: 88px;
+  padding: 8px;
+  border: 0;
+  border-radius: 8px;
+  background: #fff8e8;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 5px 0 rgba(6, 29, 82, 0.08);
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
 }
 
-.space-scene > span {
+.space-scene:hover,
+.space-scene.is-selected {
+  background: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 rgba(6, 29, 82, 0.12);
+}
+
+.space-scene.is-selected {
+  outline: 4px solid var(--sun);
+  outline-offset: -4px;
+}
+
+.space-scene:focus-visible {
+  outline: 4px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.space-scene img {
+  width: 92px;
+  aspect-ratio: 1583 / 994;
+  object-fit: contain;
+  border: 3px solid var(--white);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 4px 0 rgba(6, 29, 82, 0.08);
+}
+
+.space-scene__top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.space-scene__index {
+  flex: 0 0 auto;
   width: 34px;
   height: 30px;
   display: inline-grid;
@@ -879,7 +926,7 @@ h2 {
 }
 
 .space-scene strong {
-  display: block;
+  min-width: 0;
   color: var(--ink);
   font-size: 16px;
   line-height: 1.25;
@@ -887,7 +934,7 @@ h2 {
 }
 
 .space-scene p {
-  margin-top: 4px;
+  margin-top: 7px;
   color: var(--muted);
   font-size: 13px;
   line-height: 1.32;

@@ -1176,7 +1176,7 @@
     }
   </style>
   <link rel="preload" as="image" href="assets/总结.webp" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="lingokids-style.css?v=ip-spaces-20260802">
+  <link rel="stylesheet" href="lingokids-style.css?v=ip-spaces-images-20260802">
 </head>
 <body>
   <div class="site">
@@ -1502,7 +1502,7 @@
             </div>
             <div class="space-rulebar" aria-label="延展图规则">
               <span>1583 x 994 横版</span>
-              <span>中英双版本</span>
+              <span>36 张中文版</span>
               <span>角色身份锁定</span>
             </div>
           </div>
@@ -1513,9 +1513,9 @@
               <span class="space-gate__title">阅读小屋</span>
               <span class="space-gate__copy">每个孩子心里都有一间阅读小屋，伙伴在里面陪孩子慢慢爱上读书。</span>
               <span class="space-gate__thumbs" aria-hidden="true">
-                <img src="assets/入迷兔.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
-                <img src="assets/沉浸猫.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
-                <img src="assets/专注狮.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+                <img src="assets/ip-spaces/01-入迷兔-阅读小屋.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+                <img src="assets/ip-spaces/02-沉浸猫-阅读小屋.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+                <img src="assets/ip-spaces/04-专注狮-阅读小屋.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
               </span>
               <span class="space-gate__action">进入空间</span>
             </button>
@@ -1524,9 +1524,9 @@
               <span class="space-gate__title">故事森林</span>
               <span class="space-gate__copy">每一本书都是一片森林，伙伴组成小队，带孩子进入故事深处。</span>
               <span class="space-gate__thumbs" aria-hidden="true">
-                <img src="assets/想象鸭.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
-                <img src="assets/猜测熊.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
-                <img src="assets/悬念狸.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+                <img src="assets/ip-spaces/13-入迷兔-故事森林.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+                <img src="assets/ip-spaces/17-想象鸭-故事森林.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+                <img src="assets/ip-spaces/21-悬念狸-故事森林.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
               </span>
               <span class="space-gate__action">进入空间</span>
             </button>
@@ -1535,9 +1535,9 @@
               <span class="space-gate__title">阅读任务卡</span>
               <span class="space-gate__copy">把阅读能力变成孩子能完成的任务，适合课程卡、奖励章和打卡体系。</span>
               <span class="space-gate__thumbs" aria-hidden="true">
-                <img src="assets/思考狗背面.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
-                <img src="assets/探索獭背面.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
-                <img src="assets/坚韧龟背面.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+                <img src="assets/ip-spaces/25-入迷兔-阅读任务卡.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+                <img src="assets/ip-spaces/35-探索獭-阅读任务卡.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
+                <img src="assets/ip-spaces/36-坚韧龟-阅读任务卡.webp" alt="" width="1583" height="994" decoding="async" loading="lazy">
               </span>
               <span class="space-gate__action">进入空间</span>
             </button>
@@ -1545,7 +1545,7 @@
 
           <div class="space-stage" aria-live="polite">
             <div class="space-stage__visual">
-              <img id="spaceHeroImage" src="assets/入迷兔.webp" alt="阅读小屋系列代表图" width="1583" height="994" decoding="async" loading="lazy">
+              <img id="spaceHeroImage" src="assets/ip-spaces/01-入迷兔-阅读小屋.webp" alt="入迷兔的阅读小屋" width="1583" height="994" decoding="async" loading="lazy">
               <div class="space-stage__label" id="spaceLabel">Cozy Reading Room</div>
             </div>
             <div class="space-stage__copy">
@@ -1628,8 +1628,10 @@
         label: "Cozy Reading Room",
         title: "阅读小屋系列",
         suffix: "的阅读小屋",
-        image: "assets/入迷兔.webp",
-        alt: "阅读小屋系列代表图",
+        assetSuffix: "阅读小屋",
+        offset: 0,
+        image: "assets/ip-spaces/01-入迷兔-阅读小屋.webp",
+        alt: "入迷兔的阅读小屋",
         description: "每个孩子心里都有一间阅读小屋，12 个小伙伴住在里面，陪孩子慢慢爱上读书。",
         usecases: ["角色卡", "阅读角物料", "房间主题贴纸"]
       },
@@ -1638,8 +1640,10 @@
         label: "Story Forest",
         title: "故事森林系列",
         suffix: "的故事森林",
-        image: "assets/想象鸭.webp",
-        alt: "故事森林系列代表图",
+        assetSuffix: "故事森林",
+        offset: 12,
+        image: "assets/ip-spaces/13-入迷兔-故事森林.webp",
+        alt: "入迷兔的故事森林",
         description: "每一本书都是一片森林，12 个阅读伙伴组成小队，带孩子进入故事深处。",
         usecases: ["故事延展", "章节地图", "桌游式任务"]
       },
@@ -1648,8 +1652,10 @@
         label: "Reading Mission Card",
         title: "阅读任务卡系列",
         suffix: "的阅读任务卡",
-        image: "assets/探索獭背面.webp",
-        alt: "阅读任务卡系列代表图",
+        assetSuffix: "阅读任务卡",
+        offset: 24,
+        image: "assets/ip-spaces/25-入迷兔-阅读任务卡.webp",
+        alt: "入迷兔的阅读任务卡",
         description: "把阅读能力变成孩子能完成的任务，让每个角色都能进入课程、奖励和打卡体系。",
         usecases: ["课程任务卡", "奖励徽章", "打卡周边"]
       }
@@ -1695,20 +1701,47 @@
 
       spaceSceneList.replaceChildren();
       extensionRoles.forEach(([index, name, slogan]) => {
-        const scene = document.createElement("article");
+        const globalIndex = String(Number(index) + space.offset).padStart(2, "0");
+        const sceneTitleText = `${name}${space.suffix}`;
+        const sceneImage = `assets/ip-spaces/${globalIndex}-${name}-${space.assetSuffix}.webp`;
+        const scene = document.createElement("button");
         scene.className = "space-scene";
+        scene.type = "button";
+        if (index === "01") {
+          scene.classList.add("is-selected");
+        }
+
+        const sceneImageEl = document.createElement("img");
+        sceneImageEl.src = sceneImage;
+        sceneImageEl.alt = sceneTitleText;
+        sceneImageEl.width = 1583;
+        sceneImageEl.height = 994;
+        sceneImageEl.decoding = "async";
+        sceneImageEl.loading = "lazy";
 
         const sceneIndex = document.createElement("span");
+        sceneIndex.className = "space-scene__index";
         sceneIndex.textContent = index;
 
         const sceneCopy = document.createElement("div");
+        sceneCopy.className = "space-scene__copy";
+        const sceneTop = document.createElement("div");
+        sceneTop.className = "space-scene__top";
         const sceneTitle = document.createElement("strong");
-        sceneTitle.textContent = `${name}${space.suffix}`;
+        sceneTitle.textContent = sceneTitleText;
         const sceneSlogan = document.createElement("p");
         sceneSlogan.textContent = slogan;
 
-        sceneCopy.append(sceneTitle, sceneSlogan);
-        scene.append(sceneIndex, sceneCopy);
+        sceneTop.append(sceneIndex, sceneTitle);
+        sceneCopy.append(sceneTop, sceneSlogan);
+        scene.append(sceneImageEl, sceneCopy);
+        scene.addEventListener("click", () => {
+          spaceSceneList.querySelectorAll(".space-scene").forEach((item) => {
+            item.classList.toggle("is-selected", item === scene);
+          });
+          spaceHeroImage.src = sceneImage;
+          spaceHeroImage.alt = sceneTitleText;
+        });
         spaceSceneList.appendChild(scene);
       });
     };
