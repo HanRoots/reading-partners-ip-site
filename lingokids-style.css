@@ -45,7 +45,6 @@ h3,
 .role-ability,
 .role-quote,
 .space-gate,
-.space-rulebar,
 .space-stage__label,
 .space-stage__meta,
 .space-usecases,
@@ -614,15 +613,14 @@ h2 {
   margin-bottom: 34px;
 }
 
-.space-rulebar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 10px;
-  max-width: 390px;
+.space-head .section-heading {
+  max-width: none;
 }
 
-.space-rulebar span,
+.expansion .section-heading h2 {
+  white-space: nowrap;
+}
+
 .space-usecases span {
   min-height: 34px;
   display: inline-flex;
@@ -1078,11 +1076,6 @@ h2 {
     grid-template-columns: 1fr;
   }
 
-  .space-rulebar {
-    justify-content: flex-start;
-    max-width: none;
-  }
-
   .journey-track::before {
     display: none;
   }
@@ -1212,6 +1205,10 @@ h2 {
     font-size: 16px;
   }
 
+  .expansion .section-heading h2 {
+    white-space: normal;
+  }
+
   .story-visual {
     min-height: 330px;
   }
@@ -1234,10 +1231,6 @@ h2 {
 
   .space-head {
     gap: 20px;
-  }
-
-  .space-rulebar span {
-    font-size: 12px;
   }
 
   .space-gate {
